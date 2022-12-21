@@ -1,0 +1,55 @@
+from tkinter import *
+from tkinter import ttk
+
+def calcBtn():
+    i1 = int ( s1.get ())
+    i2 = int ( s2.get ())
+    l3 ["text"] = "The result is " + str ( i1+i2 ) 
+
+def calcBtn2():    
+    i1 = int ( s1.get ())
+    i2 = int ( s2.get ())
+    l3 ["text"] = "The result is " + str ( i1-i2 )
+
+def calcBtn3():    
+    i1 = int ( s1.get ())
+    i2 = int ( s2.get ())
+    l3 ["text"] = "The result is " + str ( i1*i2 )
+
+def calcBtn4():    
+    i1 = int ( s1.get ())
+    i2 = int ( s2.get ())
+    l3 ["text"] = "The result is " + str ( i1/i2 )
+
+w=Tk()
+w.title ("CENG105 Exercise")
+w.geometry ("500x200")
+w.columnconfigure (0 , weight =1)
+
+form = ttk.Frame (w , padding =10)
+form.grid ()
+
+s1=StringVar()
+s2=StringVar()
+l1=Label ( form , text ="First number:")
+l2=Label ( form , text ="Second number:")
+
+e1=Entry ( form , textvariable = s1 )
+e2=Entry ( form , textvariable = s2 )
+l3=Label ( form , text ="")
+b1=Button ( form , text ="+", command = calcBtn )
+b2=Button ( form , text ="-", command = calcBtn2 )
+b3=Button ( form , text ="*", command = calcBtn3 )
+b4=Button ( form , text ="/", command = calcBtn4 )
+
+l1.grid ( column =0 , row =0)
+e1.grid ( column =1 , row =0)
+l2.grid ( column =2 , row =0)
+e2.grid ( column =3 , row =0)
+b1.grid ( column =0 , row =2 , columnspan =1 , sticky ="we")
+b2.grid ( column =1 , row =2 , columnspan =1 , sticky ="we")
+b3.grid ( column =2 , row =2 , columnspan =1 , sticky ="we")
+b4.grid ( column =3 , row =2 , columnspan =1 , sticky ="we")
+
+l3.grid ( column =0 , row =4 , columnspan =2)
+w.mainloop()
